@@ -17,6 +17,7 @@ module.exports = {
     },
     height: {
       xl: "900px",
+      xxl: "1400px",
       full: "100%",
     },
   },

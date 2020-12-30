@@ -6,9 +6,9 @@ const Hero = (props) => {
   let { header, content, cta, src } = props.data;
 
   return (
-    <div id="hero-container" className="flex flex-wrap justify-around pl-20 h-xl">
+    <div id="hero-container" className="flex justify-between pl-20 h-xl 2xl:h-xxl">
       <div className="w-2/4">
-        <div className="flex flex-col justify-center h-full">
+        <div className="flex flex-col justify-center h-full pr-20">
           <h2 className="font-header font-bold text-white text-7xl pb-8 text-shadow">
             {header}
           </h2>
@@ -21,7 +21,7 @@ const Hero = (props) => {
         </div>
       </div>
       <div className="w-2/4 relative">
-        <Image src={src} layout="fill" objectFit="contain" className="" />
+        <Image src={src} layout="fill" objectFit="cover" className="" />
       </div>
     </div>
   );
