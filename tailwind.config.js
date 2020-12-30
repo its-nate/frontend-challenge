@@ -7,13 +7,17 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      header: ["Josefin Slab", "serif"],
-      content: ["Fira Sans", "sans-serif"],
+      header: ["Cabin Condensed", "sans-serif"],
+      content: ["Oxygen", "sans-serif"],
     },
     colors: {
-      'blue': "#3685B5",
-      'yellow': "#FDE74C",
-      'pink': "#FF4782"
+      pink: "#FF4782",
+      pinkDark: "#c93664",
+      white: "#FFF",
+    },
+    height: {
+      xl: "900px",
+      full: "100%",
     },
   },
   variants: {

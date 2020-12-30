@@ -32,7 +32,7 @@ class Home extends React.Component<{}, { data: any; loaded: boolean }> {
         <Head>
           <link rel="preconnect" href={`https://fonts.gstatic.com`} />
           <link
-            href={`https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Josefin+Slab&display=swap`}
+            href={`https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&family=Oxygen:wght@700&display=swap`}
             rel="stylesheet"
           />
         </Head>
