@@ -44,7 +44,7 @@ const Hero = (props) => {
             {content}
           </h4>
           <div className="">
-            <ButtonPrimary slug={"/slug"} cta={cta} />
+            <ButtonPrimary slug={"/"} cta={cta} />
           </div>
         </div>
       </div>
