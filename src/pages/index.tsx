@@ -12,7 +12,7 @@ class Home extends React.Component<{}, { data: any; loaded: boolean }> {
   }
 
   getData = () => {
-    return fetch("http://localhost:3000/api/cms");
+    return fetch("./api/cms");
   };
 
   async componentDidMount() {
