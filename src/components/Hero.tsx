@@ -1,9 +1,8 @@
-import { useState, useEffect} from "react";
+import { HeroProps } from "../types";
 import Image from "next/image";
 import ButtonPrimary from "../components/ButtonPrimary";
 
-const Hero = (props) => {
-  let { header, content, cta, src } = props.data;
+const Hero: React.FC<HeroProps> = ({header, content, cta, src }) => {
 
   return (
     <div

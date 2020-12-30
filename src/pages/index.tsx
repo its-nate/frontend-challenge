@@ -37,7 +37,12 @@ class Home extends React.Component<{}, { data: any; loaded: boolean }> {
           />
         </Head>
 
-        <Hero data={this.state.data} />
+        <Hero
+          header={this.state.data.header}
+          content={this.state.data.content}
+          cta={this.state.data.cta}
+          src={this.state.data.src}
+        />
       </>
     );
   }
