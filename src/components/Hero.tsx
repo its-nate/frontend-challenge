@@ -2,33 +2,8 @@ import { useState, useEffect} from "react";
 import Image from "next/image";
 import ButtonPrimary from "../components/ButtonPrimary";
 
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  })
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return windowSize;
-}
-
 const Hero = (props) => {
   let { header, content, cta, src } = props.data;
-
-  const size = useWindowSize();
 
   return (
     <div
@@ -49,11 +24,7 @@ const Hero = (props) => {
         </div>
       </div>
       <div className="w-full lg:w-2/4 h-full relative">
-        {size.width >= 1024 ? (
-          <Image src={src} layout="fill" objectFit="cover" className="" />
-        ) : (
-          <Image src={src} layout="fill" objectFit="contain" className="" />
-        )}
+        <Image src={src} layout="fill" objectFit="contain" className="" />
       </div>
     </div>
   );
