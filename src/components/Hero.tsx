@@ -2,7 +2,9 @@ import { HeroProps } from "../types";
 import Image from "next/image";
 import ButtonPrimary from "../components/ButtonPrimary";
 
-const Hero: React.FC<HeroProps> = ({header, content, cta, src }) => {
+const Hero: React.FC<HeroProps> = ({ data }) => {
+
+  let { header, content, cta, src} = data;
 
   return (
     <div
