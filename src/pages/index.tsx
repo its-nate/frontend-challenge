@@ -2,7 +2,23 @@ import React from "react";
 import Head from "next/head";
 import Hero from "../components/Hero";
 
-class Home extends React.Component<{}, { data: any; loaded: boolean }> {
+export async function getServerSideProps(context) {
+  let host = context.req.headers.host;
+  let protocol = "";
+
+  if (host === "localhost:3000") {
+    protocol = "http://";
+  } else {
+    protocol = "https://"
+  }
+
+  const res = await fetch(protocol + context.req.headers.host + "/api/cms");
+  const data = await res.json();
+
+  return { props: { data } };
+};
+
+class Home extends React.Component<{ data }, { data: any; loaded: boolean }> {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,19 +27,11 @@ class Home extends React.Component<{}, { data: any; loaded: boolean }> {
     };
   }
 
-  getData = () => {
-    return fetch("./api/cms");
-  };
-
-  async componentDidMount() {
-    await this.getData()
-      .then((res) => res.json())
-      .then((data) =>
-        this.setState({
-          data: data,
-          loaded: true,
-        })
-      );
+  componentDidMount() {
+    this.setState({
+      data: this.props.data,
+      loaded: true
+    })
   }
 
   content() {
