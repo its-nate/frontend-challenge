@@ -2,7 +2,7 @@ import React from "react";
 
 const ButtonPrimary = (props) => {
     return (
-        <button>
+        <button className="self-end">
             <a href={props.slug}>{props.cta}</a>
         </button>
     )

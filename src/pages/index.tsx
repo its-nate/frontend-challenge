@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Hero from "../components/Hero";
 
 class Home extends React.Component<{}, { data: any; loaded: boolean }> {
@@ -27,9 +28,17 @@ class Home extends React.Component<{}, { data: any; loaded: boolean }> {
 
   content() {
     return (
-      <div className="container flex items-center mx-auto justify-center">
+      <>
+        <Head>
+          <link rel="preconnect" href={`https://fonts.gstatic.com`} />
+          <link
+            href={`https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Josefin+Slab&display=swap`}
+            rel="stylesheet"
+          />
+        </Head>
+
         <Hero data={this.state.data} />
-      </div>
+      </>
     );
   }
 
